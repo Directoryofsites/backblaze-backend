@@ -38,6 +38,19 @@ app.get('/', (req, res) => {
   });
 });
 
+// NUEVA RUTA DE PRUEBA
+app.get('/api/test-files', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Ruta de prueba para listado de archivos',
+    files: [
+      { name: 'prueba.txt', path: '/prueba.txt', type: 'text/plain', size: 1024 },
+      { name: 'documentos', path: '/documentos', type: 'folder', isFolder: true, size: 0 }
+    ],
+    serverTime: new Date().toISOString()
+  });
+});
+
 // Ruta para mostrar variables de entorno (solo para diagnóstico)
 app.get('/api/env', (req, res) => {
   const variables = {
