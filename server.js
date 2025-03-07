@@ -415,6 +415,6 @@ app.delete('/api/files/:fileName', async (req, res) => {
 // NUEVAS RUTAS - FIN
 
 // Iniciar servidor
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor proxy para Backblaze B2 ejecutándose en puerto ${PORT}`);
 });
